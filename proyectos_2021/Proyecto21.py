@@ -13,7 +13,12 @@ rutas = datos_rutas[:, [2, 4]]
 
 aeropuertos = np.unique(rutas)
 
+aeropuertos = aeropuertos.astype(object)
+
 rutas_indice = rutas.copy()
+
+rutas_indice = rutas_indice.astype(object)
+
 for idx in range(len(aeropuertos)):
     rutas_indice = np.where(rutas_indice == aeropuertos[idx], idx, rutas_indice)
 
